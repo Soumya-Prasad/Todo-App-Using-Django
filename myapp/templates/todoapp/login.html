@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <center>
+    <div class="wrapper">
+        <h1>Login</h1><br>
+        {% if messages %}
+          {% for message in messages %}
+            <h2 style="color: firebrick;">{{message}}</h2>
+          {% endfor %}
+        {% endif %}
+        <form action="#" method="POST">
+        {% csrf_token %}
+            <div class="input">
+                <input type="text" placeholder="Enter your username" name="uname">
+            </div></br>
+            <div class="input">
+                <input type="password" placeholder="Enter your password" name="pass">
+            </div></br>
+            <div class="input">
+                <input type="submit" style="background-color: rgb(123, 196, 220); color: white;" value="Login">
+            </div></br>
+            <div class="text">
+                <h3>Don't have an account?<a href="{% url 'register' %}">Register now</a></h3>
+            </div>
+            <div class="text">
+                <h3>Forgot Password?<a href="#">Reset</a></h3>
+            </div>
+
+        </form>
+    </div>
+    </center>
+</body>
+</html>
